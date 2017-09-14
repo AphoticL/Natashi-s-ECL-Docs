@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Basic Syntax - Natashi's ECL Syntax Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Basic Syntax";
+    var mkdocs_page_input_path = "basics.md";
+    var mkdocs_page_url = "/basics/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Natashi's ECL Syntax Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Basic Syntax</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#formless">formless</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_1">[]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#anim">anim</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ecli">ecli</a></li>
+    
+
+    <li class="toctree-l2"><a href="#sub">sub</a></li>
+    
+
+    <li class="toctree-l2"><a href="#var">var</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">!</a></li>
+    
+
+    <li class="toctree-l2"><a href="#xx">xx:</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#when-the-xx-is-an-integer">When the xx is an integer:</a></li>
+        
+            <li><a class="toctree-l3" href="#when-the-xx-is-a-string">When the xx is a string:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#_3">$</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_4">%</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_ss">_SS</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_ff">_ff</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_fs">_fS</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_sf">_Sf</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_s">_S</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_f">_f</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99xx">[-99xx]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99xx0f">[-99xx.0f]</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Natashi's ECL Syntax Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Basic Syntax</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Here are the basic syntaxes you might want to know first before going into the codes.</p>
+<h1 id="formless">formless</h1>
+<p>Pushes a variable to either the float or integer stack, depending on the type of variable used.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">1.0f;       // Pushes a float with the value of 1.0 to the float stack.
+6;          // Pushes an int with the value of 6 to the integer stack.
+-6;         // Negative values are valid.
+-34.355f;   // Same goes to floats.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; stacks do not exist in dmf.</p>
+<h1 id="_1">[]</h1>
+<p>Pops a variable with the specified order from a stack to be used.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">[-1]        // Pops the topmost variable from the integer stack.
+[-2]        // Pops the second variable from the integer stack.
+[-1.0f]     // Pops the topmost variable from the float stack.
+[-3.0f]     // Pops the third variable from the float stack.
+[-1.6f]     // Invalid.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; stacks do not exist in dmf.</p>
+<h1 id="anim">anim</h1>
+<p>Used as a preprocessor, imports <em>ANM</em> scripts.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">anim{ &quot;enemy.anm&quot;; }
+anim{ &quot;enemy.anm&quot;; &quot;st06enm.anm&quot;; }
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong></p>
+<h1 id="ecli">ecli</h1>
+<p>Used as a preprocessor, includes <em>ECL</em> scripts.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">ecli{ &quot;default.ecl&quot;; };
+ecli{ &quot;default.ecl&quot;; &quot;st06bs.ecl&quot; };
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>#include</strong></p>
+<h1 id="sub">sub</h1>
+<p>Defines a <em>subroutine</em>. Rounded brackets cannot be omitted. Parameters are defined with only spaces seperating them.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">sub Something(){}
+sub Something( A B C D E ){}
+sub Something( count graphic wait way ){}
+</code></pre>
+
+<p>Danmakufu Equivalent:</p>
+<pre><code class="dmf">task Something(){}
+task Something(A, B, C, D, E){}
+</code></pre>
+
+<h1 id="var">var</h1>
+<p>Defines local <em>variables</em>. Must be present at the start of all subroutines, but does not need to always create a variable.
+<em>Variables</em> are defined in series, with only spaces seperating them.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">var A;
+var A B C;
+</code></pre>
+
+<p>Danmakufu Equivalent:</p>
+<pre><code class="js">let A;
+let A, B, C;
+</code></pre>
+
+<h1 id="_2">!</h1>
+<p>Pushes variable(s) to the top of the stack based on difficulty level. (E = easy, N = normal, H = hard, L = lunatic, O = overdrive, * = all difficulties)</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">!E
+    60;
+!N
+    40;
+!HL
+    20;
+!*
+    ins_23([-1]);
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; difficulties aren't hardcoded into dmf.</p>
+<h1 id="xx">xx:</h1>
+<p>There are two cases:</p>
+<h3 id="when-the-xx-is-an-integer">When the <code>xx</code> is an integer:</h3>
+<p>Time label, tells the engine to execute the following block of code once an xx amount of <strong>frames</strong> has passed after subroutine activation.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">60:         // 60 frames delay.
+3:          // 3 frames delay.
+99999:      // 99999 frames delay.
+-30:        // Invalid.
+20.41:      // Invalid.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; labels do not exist in dmf.</p>
+<h3 id="when-the-xx-is-a-string">When the <code>xx</code> is a string:</h3>
+<p>Label for jumps and gotos. Label names generated for decompiled ECL scripts are in <code>"[Subroutine name]_[Numerical ID]"</code>.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">Boss1_at_239:
+WhateverLabelThisIs:
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; labels do not exist in dmf.</p>
+<h1 id="_3">$</h1>
+<p>Signifies an integer variable.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">$A;         // Pushes an integer variable to top of the int stack.
+$B = 8;     // Writes an integer to a variable.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; as stacks and real number types do not exist in dmf.</p>
+<h1 id="_4">%</h1>
+<p>Signifies an float variable.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">%A;         // Pushes a float variable to top of the int stack.
+%B = -18.55;     // Writes a float to a variable.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>Absent</strong>; as stacks and real number types do not exist in dmf.</p>
+<h1 id="_ss">_SS</h1>
+<p>Passes an integer as an argument of a subroutine.</p>
+<h1 id="_ff">_ff</h1>
+<p>Passes a float as an argument of a subroutine.</p>
+<h1 id="_fs">_fS</h1>
+<p>Converts an integer to a float when passing an argument to a subroutine.</p>
+<h1 id="_sf">_Sf</h1>
+<p>Converts a float to an integer when passing an argument to a subroutine.</p>
+<h1 id="_s">_S</h1>
+<p>Convert to an integer.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">_S(6.0f);       // Converted to 6.  
+_S(89.24f);     // Converted to 89.
+_S(%A);         // A's value is temporarily converted to an int, but A's actual value remains the same as a float.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>round</strong>();</p>
+<h1 id="_f">_f</h1>
+<p>Converts to a float.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">_f(192);        // Converted to 192.0f.
+_f($A);         // A's value is temporarily converted to a float, but A's actual value remains the same as an int.
+</code></pre>
+
+<p>Danmakufu Equivalent: <strong>truncate</strong>();</p>
+<h1 id="-99xx">[-99xx]</h1>
+<p>A build-in register that returns an int. An in-depth list is currently under construction.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">[-9903];
+[9903];         // Invalid.
+[-10000];       // Highest register.
+</code></pre>
+
+<h1 id="-99xx0f">[-99xx.0f]</h1>
+<p>A build-in register that returns a float. An in-depth list is currently under construction.</p>
+<p><strong>Examples:</strong></p>
+<pre><code class="ecl">[-9998.0f];
+[9938.0f];      // Invalid.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
