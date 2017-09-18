@@ -262,7 +262,7 @@
 <h1 id="-9947">[-9947]</h1>
 <p>Returns whether the player has lost a life or used a bomb in an attack. Returns 0 Either a life has been lost or a bomb has been used, returns 1 otherwise.</p>
 <p><em>Must be manually reset.</em></p>
-<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);</code> <em>or</em> <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);</code></p>
+<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT) || ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT)</code></p>
 <h1 id="-9948">[-9948]</h1>
 <p>Returns number of bombs used.</p>
 <p><em>Must be manually reset.</em></p>
