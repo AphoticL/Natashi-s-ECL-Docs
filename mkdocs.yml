@@ -3,3 +3,4 @@ theme: readthedocs
 pages:
 - Home: index.md
 - Basic Syntax: basics.md
+- Registers: registers.md

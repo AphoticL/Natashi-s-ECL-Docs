@@ -27,7 +27,7 @@
         },
         {
             "location": "/basics/",
-            "text": "Here are the basic syntaxes you might want to know first before going into the codes.\n\n\nformless\n\n\nPushes a variable to either the float or integer stack, depending on the type of variable used.\n\n\nExamples:\n\n\n1.0f;       // Pushes a float with the value of 1.0 to the float stack.\n6;          // Pushes an int with the value of 6 to the integer stack.\n-6;         // Negative values are valid.\n-34.355f;   // Same goes to floats.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; stacks do not exist in dmf.\n\n\n[]\n\n\nPops a variable with the specified order from a stack to be used.\n\n\nExamples:\n\n\n[-1]        // Pops the topmost variable from the integer stack.\n[-2]        // Pops the second variable from the integer stack.\n[-1.0f]     // Pops the topmost variable from the float stack.\n[-3.0f]     // Pops the third variable from the float stack.\n[-1.6f]     // Invalid.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; stacks do not exist in dmf.\n\n\nanim\n\n\nUsed as a preprocessor, imports \nANM\n scripts.\n\n\nExamples:\n\n\nanim{ \"enemy.anm\"; }\nanim{ \"enemy.anm\"; \"st06enm.anm\"; }\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n\n\necli\n\n\nUsed as a preprocessor, includes \nECL\n scripts.\n\n\nExamples:\n\n\necli{ \"default.ecl\"; };\necli{ \"default.ecl\"; \"st06bs.ecl\" };\n\n\n\n\nDanmakufu Equivalent: \n#include\n\n\nsub\n\n\nDefines a \nsubroutine\n. Rounded brackets cannot be omitted. Parameters are defined with only spaces seperating them.\n\n\nExamples:\n\n\nsub Something(){}\nsub Something( A B C D E ){}\nsub Something( count graphic wait way ){}\n\n\n\n\nDanmakufu Equivalent:\n\n\ntask Something(){}\ntask Something(A, B, C, D, E){}\n\n\n\n\nvar\n\n\nDefines local \nvariables\n. Must be present at the start of all subroutines, but does not need to always create a variable.\n\nVariables\n are defined in series, with only spaces seperating them.\n\n\nExamples:\n\n\nvar A;\nvar A B C;\n\n\n\n\nDanmakufu Equivalent:\n\n\nlet A;\nlet A, B, C;\n\n\n\n\n!\n\n\nPushes variable(s) to the top of the stack based on difficulty level. (E = easy, N = normal, H = hard, L = lunatic, O = overdrive, * = all difficulties)\n\n\nExamples:\n\n\n!E\n    60;\n!N\n    40;\n!HL\n    20;\n!*\n    ins_23([-1]);\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; difficulties aren't hardcoded into dmf.\n\n\nxx:\n\n\nThere are two cases:\n\n\nWhen the \nxx\n is an integer:\n\n\nTime label, tells the engine to execute the following block of code once an xx amount of \nframes\n has passed after subroutine activation.\n\n\nExamples:\n\n\n60:         // 60 frames delay.\n3:          // 3 frames delay.\n99999:      // 99999 frames delay.\n-30:        // Invalid.\n20.41:      // Invalid.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; labels do not exist in dmf.\n\n\nWhen the \nxx\n is a string:\n\n\nLabel for jumps and gotos. Label names generated for decompiled ECL scripts are in \n\"[Subroutine name]_[Numerical ID]\"\n.\n\n\nExamples:\n\n\nBoss1_at_239:\nWhateverLabelThisIs:\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; labels do not exist in dmf.\n\n\n$\n\n\nSignifies an integer variable.\n\n\nExamples:\n\n\n$A;         // Pushes an integer variable to top of the int stack.\n$B = 8;     // Writes an integer to a variable.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; as stacks and real number types do not exist in dmf.\n\n\n%\n\n\nSignifies an float variable.\n\n\nExamples:\n\n\n%A;         // Pushes a float variable to top of the int stack.\n%B = -18.55;     // Writes a float to a variable.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; as stacks and real number types do not exist in dmf.\n\n\n_SS\n\n\nPasses an integer as an argument of a subroutine.\n\n\n_ff\n\n\nPasses a float as an argument of a subroutine.\n\n\n_fS\n\n\nConverts an integer to a float when passing an argument to a subroutine.\n\n\n_Sf\n\n\nConverts a float to an integer when passing an argument to a subroutine.\n\n\n_S\n\n\nConvert to an integer.\n\n\nExamples:\n\n\n_S(6.0f);       // Converted to 6.  \n_S(89.24f);     // Converted to 89.\n_S(%A);         // A's value is temporarily converted to an int, but A's actual value remains the same as a float.\n\n\n\n\nDanmakufu Equivalent: \nround\n();\n\n\n_f\n\n\nConverts to a float.\n\n\nExamples:\n\n\n_f(192);        // Converted to 192.0f.\n_f($A);         // A's value is temporarily converted to a float, but A's actual value remains the same as an int.\n\n\n\n\nDanmakufu Equivalent: \ntruncate\n();\n\n\n[-99xx]\n\n\nA build-in register that returns an int. An in-depth list is currently under construction.\n\n\nExamples:\n\n\n[-9903];\n[9903];         // Invalid.\n[-10000];       // Highest register.\n\n\n\n\n[-99xx.0f]\n\n\nA build-in register that returns a float. An in-depth list is currently under construction.\n\n\nExamples:\n\n\n[-9998.0f];\n[9938.0f];      // Invalid.",
+            "text": "Here are the basic syntaxes you might want to know first before going into the codes.\n\n\nformless\n\n\nPushes a variable to either the float or integer stack, depending on the type of variable used.\n\n\nExamples:\n\n\n1.0f;       // Pushes a float with the value of 1.0 to the float stack.\n6;          // Pushes an int with the value of 6 to the integer stack.\n-6;         // Negative values are valid.\n-34.355f;   // Same goes to floats.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; stacks do not exist in dmf.\n\n\n[]\n\n\nPops a variable with the specified order from a stack to be used.\n\n\nExamples:\n\n\n[-1]        // Pops the topmost variable from the integer stack.\n[-2]        // Pops the second variable from the integer stack.\n[-1.0f]     // Pops the topmost variable from the float stack.\n[-3.0f]     // Pops the third variable from the float stack.\n[-1.6f]     // Invalid.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; stacks do not exist in dmf.\n\n\nanim\n\n\nUsed as a preprocessor, imports \nANM\n scripts.\n\n\nExamples:\n\n\nanim{ \"enemy.anm\"; }\nanim{ \"enemy.anm\"; \"st06enm.anm\"; }\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n\n\necli\n\n\nUsed as a preprocessor, includes \nECL\n scripts.\n\n\nExamples:\n\n\necli{ \"default.ecl\"; };\necli{ \"default.ecl\"; \"st06bs.ecl\" };\n\n\n\n\nDanmakufu Equivalent: \n#include\n\n\nsub\n\n\nDefines a \nsubroutine\n. Rounded brackets cannot be omitted. Parameters are defined with only spaces seperating them.\n\n\nExamples:\n\n\nsub Something(){}\nsub Something( A B C D E ){}\nsub Something( count graphic wait way ){}\n\n\n\n\nDanmakufu Equivalent:\n\n\ntask Something(){}\ntask Something(A, B, C, D, E){}\n\n\n\n\nvar\n\n\nDefines local \nvariables\n. Must be present at the start of all subroutines, but does not need to always create a variable.\n\nVariables\n are defined in series, with only spaces seperating them.\n\n\nExamples:\n\n\nvar A;\nvar A B C;\n\n\n\n\nDanmakufu Equivalent:\n\n\nlet A;\nlet A, B, C;\n\n\n\n\n!\n\n\nPushes variable(s) to the top of the stack based on difficulty level. (E = easy, N = normal, H = hard, L = lunatic, O = overdrive, * = all difficulties)\n\n\nExamples:\n\n\n!E\n    60;\n!N\n    40;\n!HL\n    20;\n!*\n    ins_23([-1]);\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; difficulties aren't hardcoded into dmf.\n\n\nxx:\n\n\nThere are two cases:\n\n\nWhen the \nxx\n is an integer:\n\n\nTime label, tells the engine to execute the following block of code once an xx amount of \nframes\n has passed after subroutine activation.\n\n\nExamples:\n\n\n60:         // 60 frames delay.\n3:          // 3 frames delay.\n99999:      // 99999 frames delay.\n-30:        // Invalid.\n20.41:      // Invalid.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; labels do not exist in dmf.\n\n\nWhen the \nxx\n is a string:\n\n\nLabel for jumps and gotos. Label names generated for decompiled ECL scripts are in \n\"[Subroutine name]_[Numerical ID]\"\n.\n\n\nExamples:\n\n\nBoss1_at_239:\nWhateverLabelThisIs:\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; labels do not exist in dmf.\n\n\n$\n\n\nSignifies an integer variable.\n\n\nExamples:\n\n\n$A;         // Pushes an integer variable to top of the int stack.\n$B = 8;     // Writes an integer to a variable.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; as stacks and real number types do not exist in dmf.\n\n\n%\n\n\nSignifies an float variable.\n\n\nExamples:\n\n\n%A;         // Pushes a float variable to top of the int stack.\n%B = -18.55;     // Writes a float to a variable.\n\n\n\n\nDanmakufu Equivalent: \nAbsent\n; as stacks and real number types do not exist in dmf.\n\n\n_SS\n\n\nPasses an integer as an argument of a subroutine.\n\n\n_ff\n\n\nPasses a float as an argument of a subroutine.\n\n\n_fS\n\n\nConverts an integer to a float when passing an argument to a subroutine.\n\n\n_Sf\n\n\nConverts a float to an integer when passing an argument to a subroutine.\n\n\n_S\n\n\nConvert to an integer.\n\n\nExamples:\n\n\n_S(6.0f);       // Converted to 6.  \n_S(89.24f);     // Converted to 89.\n_S(%A);         // A's value is temporarily converted to an int, but A's actual value remains the same as a float.\n\n\n\n\nDanmakufu Equivalent: \nround();\n\n\n_f\n\n\nConverts to a float.\n\n\nExamples:\n\n\n_f(192);        // Converted to 192.0f.\n_f($A);         // A's value is temporarily converted to a float, but A's actual value remains the same as an int.\n\n\n\n\nDanmakufu Equivalent: \ntruncate();\n\n\n[-99xx]\n\n\nA build-in register that returns an int. An in-depth list can be found \nhere\n.\n\n\nExamples:\n\n\n[-9903];\n[9903];         // Invalid.\n[-10000];       // Highest register.\n\n\n\n\n[-99xx.0f]\n\n\nA build-in register that returns a float. An in-depth list is currently \nhere\n.\n\n\nExamples:\n\n\n[-9998.0f];\n[9938.0f];      // Invalid.",
             "title": "Basic Syntax"
         },
         {
@@ -112,23 +112,253 @@
         },
         {
             "location": "/basics/#_s",
-            "text": "Convert to an integer.  Examples:  _S(6.0f);       // Converted to 6.  \n_S(89.24f);     // Converted to 89.\n_S(%A);         // A's value is temporarily converted to an int, but A's actual value remains the same as a float.  Danmakufu Equivalent:  round ();",
+            "text": "Convert to an integer.  Examples:  _S(6.0f);       // Converted to 6.  \n_S(89.24f);     // Converted to 89.\n_S(%A);         // A's value is temporarily converted to an int, but A's actual value remains the same as a float.  Danmakufu Equivalent:  round();",
             "title": "_S"
         },
         {
             "location": "/basics/#_f",
-            "text": "Converts to a float.  Examples:  _f(192);        // Converted to 192.0f.\n_f($A);         // A's value is temporarily converted to a float, but A's actual value remains the same as an int.  Danmakufu Equivalent:  truncate ();",
+            "text": "Converts to a float.  Examples:  _f(192);        // Converted to 192.0f.\n_f($A);         // A's value is temporarily converted to a float, but A's actual value remains the same as an int.  Danmakufu Equivalent:  truncate();",
             "title": "_f"
         },
         {
             "location": "/basics/#-99xx",
-            "text": "A build-in register that returns an int. An in-depth list is currently under construction.  Examples:  [-9903];\n[9903];         // Invalid.\n[-10000];       // Highest register.",
+            "text": "A build-in register that returns an int. An in-depth list can be found  here .  Examples:  [-9903];\n[9903];         // Invalid.\n[-10000];       // Highest register.",
             "title": "[-99xx]"
         },
         {
             "location": "/basics/#-99xx0f",
-            "text": "A build-in register that returns a float. An in-depth list is currently under construction.  Examples:  [-9998.0f];\n[9938.0f];      // Invalid.",
+            "text": "A build-in register that returns a float. An in-depth list is currently  here .  Examples:  [-9998.0f];\n[9938.0f];      // Invalid.",
             "title": "[-99xx.0f]"
+        },
+        {
+            "location": "/registers/",
+            "text": "Here is the list of known ECL Registers\n\n\n[-9903]\n\n\nSupported in: Hidden Star in Four Seasons (\n16\n)\n\n\nReturns the type of seasonal subshot the player is using. \n\n\n(\n0\n = \nSpring\n, \n1\n = \nSummer\n, \n2\n = \nFall\n, \n3\n = \nWinter\n)\n\n\n[-9913]\n\n\nSupported in: Double Spoiler (\n12.5\n)\n\n\nReturns number of photos taken.\n\n\n[-9915.0f] ~ [-9922.0f]\n\n\nGlobal float, free for reading and writing.\n\n\n[-9923] ~ [-9926]\n\n\nGlobal int, free for reading and writing.\n\n\n[-9930]\n\n\nReturns current power level.\n\n\nDanmakufu Equilavent: \nGetPlayerPower();\n\n\n[-9932.0f] ~ [-9935.0f]\n\n\nLocal float, free for reading and writing.\n\n\n[-9936.0f] ~ [-9939.0f], [-9940] ~ [-9943]\n\n\nLocal boss variables, free for reading and writing.\n\n\n[-9944.0f]\n\n\nReturns distance from the unit to the player.\n\n\nDanmakufu Equivalent: \nGetObjectDistance(unit, GetPlayerObjectID());\n\n\n[-9945]\n\n\nReturns Player Type\n\n\n[-9946]\n\n\nReturns current number of active units on-screen.\n\n\nDanmakufu Equivalent: \nlength(GetAllEnemyID());\n\n\n[-9947]\n\n\nReturns whether the player has lost a life or used a bomb in an attack. Returns 0 Either a life has been lost or a bomb has been used, returns 1 otherwise.\n\n\nMust be manually reset.\n\n\nDanmakufu Equivalent: \nObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);\n \nor\n \nObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);\n\n\n[-9948]\n\n\nReturns number of bombs used.\n\n\nMust be manually reset.\n\n\nDanmakufu Equivalent: \nObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);\n\n\n[-9949]\n\n\nReturns number of lives lost. \n\n\nMust be manually reset.\n\n\nDanmakufu Equivalent: \nObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);\n\n\n[-9950]\n\n\nReturns 1 when the difficulty is \nLunatic\n, 0 otherwise.\n\n\n[-9951]\n\n\nReturns 1 when the difficulty is \nHard\n, 0 otherwise.\n\n\n[-9952]\n\n\nReturns 1 when the difficulty is \nNormal\n, 0 otherwise.\n\n\n[-9953]\n\n\nReturns 1 when the difficulty is \nEasy\n, 0 otherwise.\n\n\n[-9954]\n\n\nCurrent life of a unit.\n\n\nDanmakufu Equivalent: \nObjEnemy_GetInfo(unit, INFO_LIFE);\n\n\n[-9955.0f]\n\n\nReturns angle of a unit to the player.\n\n\nDanmakufu Equivalent: \nGetAngleToPlayer(unit);\n\n\n[-9956.0f]\n\n\nReturns absolute angle of a unit to the player.\n\n\nDanmakufu Equivalent: \nGetAngleToPlayer(unit);\n\n\n[-9958.0f]\n\n\nMovement angle of a unit. 0 is returned if the unit is not moving.\n\n\nDanmakufu Equivalent: \nObjMove_GetAngle(unit);\n\n\n[-9959]\n\n\nReturns difficulty level. \n\n\n(\n0\n = \nEasy\n, \n1\n = \nNormal\n, \n2\n = \nHard\n, \n3\n = \nLunatic\n)\n\n\n[-9960]\n\n\nReturns the current rank(?).\n\n\n[-9962.0f]\n\n\nReturn unit's Y position.\n\n\nDanmakufu Equivalent: \nObjMove_GetY(unit);\n\n\n[-9963.0f]\n\n\nReturn Unit's X position.\n\n\nDanmakufu Equivalent: \nObjMove_GetX(unit);\n\n\n[-9964.0f]\n\n\nReturns the Player's Y position.\n\n\nDanmakufu Equivalent: \nGetPlayerY();\n\n\n[-9965.0f]\n\n\nReturns the Player's X position.\n\n\nDanmakufu Equivalent: \nGetPlayerX();\n\n\n[-9971.0f]\n\n\nMovement angle of a unit. 0 is returned if the unit is not moving.\n\n\nDanmakufu Equivalent: \nObjMove_GetAngle(unit);\n\n\n[-9979.0f] ~ [-9981.0f]\n\n\nLocal unit float, free for reading and writing. Shared across all subroutines created by the unit.\n\n\n[-9982] ~ [-9985]\n\n\nLocal unit int, free for reading and writing. Shared across all subroutines created by the unit.\n\n\n[-9986]\n\n\nReturns 0 if the previous attack has been timed out, 1 otherwise.\n\n\nDanmakufu Equivalent: \nObjEnemyBossScene_GetInfo(scene, INFO_TIMERF) <= 0;\n\n\n[-9987.0f]\n\n\nRandom float between -1.0f and 1.0f.\n\n\nDanmakufu Equivalent: \nrand(-1,1);\n\n\n[-9988]\n\n\nAmount of time passed in frames.\n\n\nDanmakufu Equivalent: \nObjEnemyBossScene_GetInfo(scene, INFO_ORGTIMERF) - ObjEnemyBossScene_GetInfo(scene, INFO_TIMERF);\n\n\n[-9989.0f]\n\n\nAngle of a unit to the player.\n\n\nDanmakufu Equivalent: \nGetAngleToPlayer(unit);\n\n\n[-9990.0f]\n\n\nPlayer's Y position.\n\n\nDanmakufu Equivalent: \nGetPlayerY();\n\n\n[-9991.0f]\n\n\nPlayer's X position.\n\n\nDanmakufu Equivalent: \nGetPlayerX();\n\n\n[-9992.0f]\n\n\nUnit's Y position relative to the player.\n\n\nDanmakufu Equivalent: \nObjMove_GetY(unit) - GetPlayerY;\n\n\n[-9993.0f]\n\n\nUnit's X position relative to the player.\n\n\nDanmakufu Equivalent: \nObjMove_GetX(unit) - GetPlayerX;\n\n\n[-9994.0f]\n\n\nUnit's Y position.\n\n\nDanmakufu Equivalent: \nObjMove_GetY(unit);\n\n\n[-9995.0f]\n\n\nUnit's X position.\n\n\nDanmakufu Equivalent: \nObjMove_GetX(unit);\n\n\n[-9996.0f]\n\n\nUnit's Y position.\n\n\nDanmakufu Equivalent: \nObjMove_GetY(unit);\n\n\n[-9997.0f]\n\n\nUnit's X position.\n\n\nDanmakufu Equivalent: \nObjMove_GetX(unit);\n\n\n[-9998.0f]\n\n\nRandom float between \n-3.1415926535.0f\n and \n3.1415926535.0f\n.\n\n\n[-9999.0f]\n\n\nRandom float between \n0.0f\n and \n1.0f\n.\n\n\n[-10000]\n\n\nRandom int.",
+            "title": "Registers"
+        },
+        {
+            "location": "/registers/#-9903",
+            "text": "Supported in: Hidden Star in Four Seasons ( 16 )  Returns the type of seasonal subshot the player is using.   ( 0  =  Spring ,  1  =  Summer ,  2  =  Fall ,  3  =  Winter )",
+            "title": "[-9903]"
+        },
+        {
+            "location": "/registers/#-9913",
+            "text": "Supported in: Double Spoiler ( 12.5 )  Returns number of photos taken.",
+            "title": "[-9913]"
+        },
+        {
+            "location": "/registers/#-99150f-99220f",
+            "text": "Global float, free for reading and writing.",
+            "title": "[-9915.0f] ~ [-9922.0f]"
+        },
+        {
+            "location": "/registers/#-9923-9926",
+            "text": "Global int, free for reading and writing.",
+            "title": "[-9923] ~ [-9926]"
+        },
+        {
+            "location": "/registers/#-9930",
+            "text": "Returns current power level.  Danmakufu Equilavent:  GetPlayerPower();",
+            "title": "[-9930]"
+        },
+        {
+            "location": "/registers/#-99320f-99350f",
+            "text": "Local float, free for reading and writing.",
+            "title": "[-9932.0f] ~ [-9935.0f]"
+        },
+        {
+            "location": "/registers/#-99360f-99390f-9940-9943",
+            "text": "Local boss variables, free for reading and writing.",
+            "title": "[-9936.0f] ~ [-9939.0f], [-9940] ~ [-9943]"
+        },
+        {
+            "location": "/registers/#-99440f",
+            "text": "Returns distance from the unit to the player.  Danmakufu Equivalent:  GetObjectDistance(unit, GetPlayerObjectID());",
+            "title": "[-9944.0f]"
+        },
+        {
+            "location": "/registers/#-9945",
+            "text": "Returns Player Type",
+            "title": "[-9945]"
+        },
+        {
+            "location": "/registers/#-9946",
+            "text": "Returns current number of active units on-screen.  Danmakufu Equivalent:  length(GetAllEnemyID());",
+            "title": "[-9946]"
+        },
+        {
+            "location": "/registers/#-9947",
+            "text": "Returns whether the player has lost a life or used a bomb in an attack. Returns 0 Either a life has been lost or a bomb has been used, returns 1 otherwise.  Must be manually reset.  Danmakufu Equivalent:  ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);   or   ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);",
+            "title": "[-9947]"
+        },
+        {
+            "location": "/registers/#-9948",
+            "text": "Returns number of bombs used.  Must be manually reset.  Danmakufu Equivalent:  ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);",
+            "title": "[-9948]"
+        },
+        {
+            "location": "/registers/#-9949",
+            "text": "Returns number of lives lost.   Must be manually reset.  Danmakufu Equivalent:  ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);",
+            "title": "[-9949]"
+        },
+        {
+            "location": "/registers/#-9950",
+            "text": "Returns 1 when the difficulty is  Lunatic , 0 otherwise.",
+            "title": "[-9950]"
+        },
+        {
+            "location": "/registers/#-9951",
+            "text": "Returns 1 when the difficulty is  Hard , 0 otherwise.",
+            "title": "[-9951]"
+        },
+        {
+            "location": "/registers/#-9952",
+            "text": "Returns 1 when the difficulty is  Normal , 0 otherwise.",
+            "title": "[-9952]"
+        },
+        {
+            "location": "/registers/#-9953",
+            "text": "Returns 1 when the difficulty is  Easy , 0 otherwise.",
+            "title": "[-9953]"
+        },
+        {
+            "location": "/registers/#-9954",
+            "text": "Current life of a unit.  Danmakufu Equivalent:  ObjEnemy_GetInfo(unit, INFO_LIFE);",
+            "title": "[-9954]"
+        },
+        {
+            "location": "/registers/#-99550f",
+            "text": "Returns angle of a unit to the player.  Danmakufu Equivalent:  GetAngleToPlayer(unit);",
+            "title": "[-9955.0f]"
+        },
+        {
+            "location": "/registers/#-99560f",
+            "text": "Returns absolute angle of a unit to the player.  Danmakufu Equivalent:  GetAngleToPlayer(unit);",
+            "title": "[-9956.0f]"
+        },
+        {
+            "location": "/registers/#-99580f",
+            "text": "Movement angle of a unit. 0 is returned if the unit is not moving.  Danmakufu Equivalent:  ObjMove_GetAngle(unit);",
+            "title": "[-9958.0f]"
+        },
+        {
+            "location": "/registers/#-9959",
+            "text": "Returns difficulty level.   ( 0  =  Easy ,  1  =  Normal ,  2  =  Hard ,  3  =  Lunatic )",
+            "title": "[-9959]"
+        },
+        {
+            "location": "/registers/#-9960",
+            "text": "Returns the current rank(?).",
+            "title": "[-9960]"
+        },
+        {
+            "location": "/registers/#-99620f",
+            "text": "Return unit's Y position.  Danmakufu Equivalent:  ObjMove_GetY(unit);",
+            "title": "[-9962.0f]"
+        },
+        {
+            "location": "/registers/#-99630f",
+            "text": "Return Unit's X position.  Danmakufu Equivalent:  ObjMove_GetX(unit);",
+            "title": "[-9963.0f]"
+        },
+        {
+            "location": "/registers/#-99640f",
+            "text": "Returns the Player's Y position.  Danmakufu Equivalent:  GetPlayerY();",
+            "title": "[-9964.0f]"
+        },
+        {
+            "location": "/registers/#-99650f",
+            "text": "Returns the Player's X position.  Danmakufu Equivalent:  GetPlayerX();",
+            "title": "[-9965.0f]"
+        },
+        {
+            "location": "/registers/#-99710f",
+            "text": "Movement angle of a unit. 0 is returned if the unit is not moving.  Danmakufu Equivalent:  ObjMove_GetAngle(unit);",
+            "title": "[-9971.0f]"
+        },
+        {
+            "location": "/registers/#-99790f-99810f",
+            "text": "Local unit float, free for reading and writing. Shared across all subroutines created by the unit.",
+            "title": "[-9979.0f] ~ [-9981.0f]"
+        },
+        {
+            "location": "/registers/#-9982-9985",
+            "text": "Local unit int, free for reading and writing. Shared across all subroutines created by the unit.",
+            "title": "[-9982] ~ [-9985]"
+        },
+        {
+            "location": "/registers/#-9986",
+            "text": "Returns 0 if the previous attack has been timed out, 1 otherwise.  Danmakufu Equivalent:  ObjEnemyBossScene_GetInfo(scene, INFO_TIMERF) <= 0;",
+            "title": "[-9986]"
+        },
+        {
+            "location": "/registers/#-99870f",
+            "text": "Random float between -1.0f and 1.0f.  Danmakufu Equivalent:  rand(-1,1);",
+            "title": "[-9987.0f]"
+        },
+        {
+            "location": "/registers/#-9988",
+            "text": "Amount of time passed in frames.  Danmakufu Equivalent:  ObjEnemyBossScene_GetInfo(scene, INFO_ORGTIMERF) - ObjEnemyBossScene_GetInfo(scene, INFO_TIMERF);",
+            "title": "[-9988]"
+        },
+        {
+            "location": "/registers/#-99890f",
+            "text": "Angle of a unit to the player.  Danmakufu Equivalent:  GetAngleToPlayer(unit);",
+            "title": "[-9989.0f]"
+        },
+        {
+            "location": "/registers/#-99900f",
+            "text": "Player's Y position.  Danmakufu Equivalent:  GetPlayerY();",
+            "title": "[-9990.0f]"
+        },
+        {
+            "location": "/registers/#-99910f",
+            "text": "Player's X position.  Danmakufu Equivalent:  GetPlayerX();",
+            "title": "[-9991.0f]"
+        },
+        {
+            "location": "/registers/#-99920f",
+            "text": "Unit's Y position relative to the player.  Danmakufu Equivalent:  ObjMove_GetY(unit) - GetPlayerY;",
+            "title": "[-9992.0f]"
+        },
+        {
+            "location": "/registers/#-99930f",
+            "text": "Unit's X position relative to the player.  Danmakufu Equivalent:  ObjMove_GetX(unit) - GetPlayerX;",
+            "title": "[-9993.0f]"
+        },
+        {
+            "location": "/registers/#-99940f",
+            "text": "Unit's Y position.  Danmakufu Equivalent:  ObjMove_GetY(unit);",
+            "title": "[-9994.0f]"
+        },
+        {
+            "location": "/registers/#-99950f",
+            "text": "Unit's X position.  Danmakufu Equivalent:  ObjMove_GetX(unit);",
+            "title": "[-9995.0f]"
+        },
+        {
+            "location": "/registers/#-99960f",
+            "text": "Unit's Y position.  Danmakufu Equivalent:  ObjMove_GetY(unit);",
+            "title": "[-9996.0f]"
+        },
+        {
+            "location": "/registers/#-99970f",
+            "text": "Unit's X position.  Danmakufu Equivalent:  ObjMove_GetX(unit);",
+            "title": "[-9997.0f]"
+        },
+        {
+            "location": "/registers/#-99980f",
+            "text": "Random float between  -3.1415926535.0f  and  3.1415926535.0f .",
+            "title": "[-9998.0f]"
+        },
+        {
+            "location": "/registers/#-99990f",
+            "text": "Random float between  0.0f  and  1.0f .",
+            "title": "[-9999.0f]"
+        },
+        {
+            "location": "/registers/#-10000",
+            "text": "Random int.",
+            "title": "[-10000]"
         }
     ]
 }

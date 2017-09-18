@@ -43,7 +43,7 @@ Used as a preprocessor, includes *ECL* scripts.
 ecli{ "default.ecl"; };
 ecli{ "default.ecl"; "st06bs.ecl" };
 ```
-Danmakufu Equivalent: **#include**
+Danmakufu Equivalent: ``#include``
 
 # sub
 Defines a *subroutine*. Rounded brackets cannot be omitted. Parameters are defined with only spaces seperating them.
@@ -159,7 +159,7 @@ _S(6.0f);	    // Converted to 6.
 _S(89.24f);	    // Converted to 89.
 _S(%A);		    // A's value is temporarily converted to an int, but A's actual value remains the same as a float.
 ```
-Danmakufu Equivalent: **round**();
+Danmakufu Equivalent: ``round();``
 
 # _f
 Converts to a float.
@@ -169,10 +169,10 @@ Converts to a float.
 _f(192);	    // Converted to 192.0f.
 _f($A);		    // A's value is temporarily converted to a float, but A's actual value remains the same as an int.
 ```
-Danmakufu Equivalent: **truncate**();
+Danmakufu Equivalent: ``truncate();``
 
 # [-99xx]
-A build-in register that returns an int. An in-depth list is currently under construction.
+A build-in register that returns an int. An in-depth list can be found [here](registers).
 
 **Examples:**
 ```ecl
@@ -181,7 +181,7 @@ A build-in register that returns an int. An in-depth list is currently under con
 [-10000];	    // Highest register.
 ```
 # [-99xx.0f]
-A build-in register that returns a float. An in-depth list is currently under construction.
+A build-in register that returns a float. An in-depth list is currently [here](registers).
 
 **Examples:**
 ```ecl
