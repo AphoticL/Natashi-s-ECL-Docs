@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Registers - Natashi's ECL Syntax Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Registers";
+    var mkdocs_page_input_path = "registers.md";
+    var mkdocs_page_url = "/registers/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Natashi's ECL Syntax Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../basics/">Basic Syntax</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Registers</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#-9903">[-9903]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9913">[-9913]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99150f-99220f">[-9915.0f] ~ [-9922.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9923-9926">[-9923] ~ [-9926]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9930">[-9930]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99320f-99350f">[-9932.0f] ~ [-9935.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99360f-99390f-9940-9943">[-9936.0f] ~ [-9939.0f], [-9940] ~ [-9943]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99440f">[-9944.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9945">[-9945]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9946">[-9946]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9947">[-9947]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9948">[-9948]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9949">[-9949]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9950">[-9950]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9951">[-9951]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9952">[-9952]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9953">[-9953]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9954">[-9954]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99550f">[-9955.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99560f">[-9956.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99580f">[-9958.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9959">[-9959]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9960">[-9960]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99620f">[-9962.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99630f">[-9963.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99640f">[-9964.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99650f">[-9965.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99710f">[-9971.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99790f-99810f">[-9979.0f] ~ [-9981.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9982-9985">[-9982] ~ [-9985]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9986">[-9986]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99870f">[-9987.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-9988">[-9988]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99890f">[-9989.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99900f">[-9990.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99910f">[-9991.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99920f">[-9992.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99930f">[-9993.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99940f">[-9994.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99950f">[-9995.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99960f">[-9996.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99970f">[-9997.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99980f">[-9998.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-99990f">[-9999.0f]</a></li>
+    
+
+    <li class="toctree-l2"><a href="#-10000">[-10000]</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Natashi's ECL Syntax Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Registers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Here is the list of known ECL Registers</p>
+<h1 id="-9903">[-9903]</h1>
+<p>Supported in: Hidden Star in Four Seasons (<strong>16</strong>)</p>
+<p>Returns the type of seasonal subshot the player is using. </p>
+<p>(<strong>0</strong> = <strong>Spring</strong>, <strong>1</strong> = <strong>Summer</strong>, <strong>2</strong> = <strong>Fall</strong>, <strong>3</strong> = <strong>Winter</strong>)</p>
+<h1 id="-9913">[-9913]</h1>
+<p>Supported in: Double Spoiler (<strong>12.5</strong>)</p>
+<p>Returns number of photos taken.</p>
+<h1 id="-99150f-99220f">[-9915.0f] ~ [-9922.0f]</h1>
+<p>Global float, free for reading and writing.</p>
+<h1 id="-9923-9926">[-9923] ~ [-9926]</h1>
+<p>Global int, free for reading and writing.</p>
+<h1 id="-9930">[-9930]</h1>
+<p>Returns current power level.</p>
+<p>Danmakufu Equilavent: <code>GetPlayerPower();</code></p>
+<h1 id="-99320f-99350f">[-9932.0f] ~ [-9935.0f]</h1>
+<p>Local float, free for reading and writing.</p>
+<h1 id="-99360f-99390f-9940-9943">[-9936.0f] ~ [-9939.0f], [-9940] ~ [-9943]</h1>
+<p>Local boss variables, free for reading and writing.</p>
+<h1 id="-99440f">[-9944.0f]</h1>
+<p>Returns distance from the unit to the player.</p>
+<p>Danmakufu Equivalent: <code>GetObjectDistance(unit, GetPlayerObjectID());</code></p>
+<h1 id="-9945">[-9945]</h1>
+<p>Returns Player Type</p>
+<h1 id="-9946">[-9946]</h1>
+<p>Returns current number of active units on-screen.</p>
+<p>Danmakufu Equivalent: <code>length(GetAllEnemyID());</code></p>
+<h1 id="-9947">[-9947]</h1>
+<p>Returns whether the player has lost a life or used a bomb in an attack. Returns 0 Either a life has been lost or a bomb has been used, returns 1 otherwise.</p>
+<p><em>Must be manually reset.</em></p>
+<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);</code> <em>or</em> <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);</code></p>
+<h1 id="-9948">[-9948]</h1>
+<p>Returns number of bombs used.</p>
+<p><em>Must be manually reset.</em></p>
+<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SPELL_COUNT);</code></p>
+<h1 id="-9949">[-9949]</h1>
+<p>Returns number of lives lost. </p>
+<p><em>Must be manually reset.</em></p>
+<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_PLAYER_SHOOTDOWN_COUNT);</code></p>
+<h1 id="-9950">[-9950]</h1>
+<p>Returns 1 when the difficulty is <strong>Lunatic</strong>, 0 otherwise.</p>
+<h1 id="-9951">[-9951]</h1>
+<p>Returns 1 when the difficulty is <strong>Hard</strong>, 0 otherwise.</p>
+<h1 id="-9952">[-9952]</h1>
+<p>Returns 1 when the difficulty is <strong>Normal</strong>, 0 otherwise.</p>
+<h1 id="-9953">[-9953]</h1>
+<p>Returns 1 when the difficulty is <strong>Easy</strong>, 0 otherwise.</p>
+<h1 id="-9954">[-9954]</h1>
+<p>Current life of a unit.</p>
+<p>Danmakufu Equivalent: <code>ObjEnemy_GetInfo(unit, INFO_LIFE);</code></p>
+<h1 id="-99550f">[-9955.0f]</h1>
+<p>Returns angle of a unit to the player.</p>
+<p>Danmakufu Equivalent: <code>GetAngleToPlayer(unit);</code></p>
+<h1 id="-99560f">[-9956.0f]</h1>
+<p>Returns absolute angle of a unit to the player.</p>
+<p>Danmakufu Equivalent: <code>GetAngleToPlayer(unit);</code></p>
+<h1 id="-99580f">[-9958.0f]</h1>
+<p>Movement angle of a unit. 0 is returned if the unit is not moving.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetAngle(unit);</code></p>
+<h1 id="-9959">[-9959]</h1>
+<p>Returns difficulty level. </p>
+<p>(<strong>0</strong> = <strong>Easy</strong>, <strong>1</strong> = <strong>Normal</strong>, <strong>2</strong> = <strong>Hard</strong>, <strong>3</strong> = <strong>Lunatic</strong>)</p>
+<h1 id="-9960">[-9960]</h1>
+<p>Returns the current rank(?).</p>
+<h1 id="-99620f">[-9962.0f]</h1>
+<p>Return unit's Y position.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetY(unit);</code></p>
+<h1 id="-99630f">[-9963.0f]</h1>
+<p>Return Unit's X position.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetX(unit);</code></p>
+<h1 id="-99640f">[-9964.0f]</h1>
+<p>Returns the Player's Y position.</p>
+<p>Danmakufu Equivalent: <code>GetPlayerY();</code></p>
+<h1 id="-99650f">[-9965.0f]</h1>
+<p>Returns the Player's X position.</p>
+<p>Danmakufu Equivalent: <code>GetPlayerX();</code></p>
+<h1 id="-99710f">[-9971.0f]</h1>
+<p>Movement angle of a unit. 0 is returned if the unit is not moving.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetAngle(unit);</code></p>
+<h1 id="-99790f-99810f">[-9979.0f] ~ [-9981.0f]</h1>
+<p>Local unit float, free for reading and writing. Shared across all subroutines created by the unit.</p>
+<h1 id="-9982-9985">[-9982] ~ [-9985]</h1>
+<p>Local unit int, free for reading and writing. Shared across all subroutines created by the unit.</p>
+<h1 id="-9986">[-9986]</h1>
+<p>Returns 0 if the previous attack has been timed out, 1 otherwise.</p>
+<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_TIMERF) &lt;= 0;</code></p>
+<h1 id="-99870f">[-9987.0f]</h1>
+<p>Random float between -1.0f and 1.0f.</p>
+<p>Danmakufu Equivalent: <code>rand(-1,1);</code></p>
+<h1 id="-9988">[-9988]</h1>
+<p>Amount of time passed in frames.</p>
+<p>Danmakufu Equivalent: <code>ObjEnemyBossScene_GetInfo(scene, INFO_ORGTIMERF) - ObjEnemyBossScene_GetInfo(scene, INFO_TIMERF);</code></p>
+<h1 id="-99890f">[-9989.0f]</h1>
+<p>Angle of a unit to the player.</p>
+<p>Danmakufu Equivalent: <code>GetAngleToPlayer(unit);</code></p>
+<h1 id="-99900f">[-9990.0f]</h1>
+<p>Player's Y position.</p>
+<p>Danmakufu Equivalent: <code>GetPlayerY();</code></p>
+<h1 id="-99910f">[-9991.0f]</h1>
+<p>Player's X position.</p>
+<p>Danmakufu Equivalent: <code>GetPlayerX();</code></p>
+<h1 id="-99920f">[-9992.0f]</h1>
+<p>Unit's Y position relative to the player.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetY(unit) - GetPlayerY;</code></p>
+<h1 id="-99930f">[-9993.0f]</h1>
+<p>Unit's X position relative to the player.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetX(unit) - GetPlayerX;</code></p>
+<h1 id="-99940f">[-9994.0f]</h1>
+<p>Unit's Y position.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetY(unit);</code></p>
+<h1 id="-99950f">[-9995.0f]</h1>
+<p>Unit's X position.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetX(unit);</code></p>
+<h1 id="-99960f">[-9996.0f]</h1>
+<p>Unit's Y position.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetY(unit);</code></p>
+<h1 id="-99970f">[-9997.0f]</h1>
+<p>Unit's X position.</p>
+<p>Danmakufu Equivalent: <code>ObjMove_GetX(unit);</code></p>
+<h1 id="-99980f">[-9998.0f]</h1>
+<p>Random float between <code>-3.1415926535.0f</code> and <code>3.1415926535.0f</code>.</p>
+<h1 id="-99990f">[-9999.0f]</h1>
+<p>Random float between <code>0.0f</code> and <code>1.0f</code>.</p>
+<h1 id="-10000">[-10000]</h1>
+<p>Random int.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../basics/" class="btn btn-neutral" title="Basic Syntax"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../basics/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

@@ -122,6 +122,11 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../registers/">Registers</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -160,7 +165,7 @@
 <p><strong>Examples:</strong></p>
 <pre><code class="ecl">1.0f;       // Pushes a float with the value of 1.0 to the float stack.
 6;          // Pushes an int with the value of 6 to the integer stack.
--6;         // Negative values are invalid.
+-6;         // Negative values are valid.
 -34.355f;   // Same goes to floats.
 </code></pre>
 
@@ -191,7 +196,7 @@ anim{ &quot;enemy.anm&quot;; &quot;st06enm.anm&quot;; }
 ecli{ &quot;default.ecl&quot;; &quot;st06bs.ecl&quot; };
 </code></pre>
 
-<p>Danmakufu Equivalent: <strong>#include</strong></p>
+<p>Danmakufu Equivalent: <code>#include</code></p>
 <h1 id="sub">sub</h1>
 <p>Defines a <em>subroutine</em>. Rounded brackets cannot be omitted. Parameters are defined with only spaces seperating them.</p>
 <p><strong>Examples:</strong></p>
@@ -200,7 +205,7 @@ sub Something( A B C D E ){}
 sub Something( count graphic wait way ){}
 </code></pre>
 
-<p>Danmakufu Equivalent: <strong>task</strong></p>
+<p>Danmakufu Equivalent:</p>
 <pre><code class="dmf">task Something(){}
 task Something(A, B, C, D, E){}
 </code></pre>
@@ -213,7 +218,7 @@ task Something(A, B, C, D, E){}
 var A B C;
 </code></pre>
 
-<p>Danmakufu Equivalent: <strong>let</strong></p>
+<p>Danmakufu Equivalent:</p>
 <pre><code class="js">let A;
 let A, B, C;
 </code></pre>
@@ -285,7 +290,7 @@ _S(89.24f);     // Converted to 89.
 _S(%A);         // A's value is temporarily converted to an int, but A's actual value remains the same as a float.
 </code></pre>
 
-<p>Danmakufu Equivalent: <strong>round</strong>();</p>
+<p>Danmakufu Equivalent: <code>round();</code></p>
 <h1 id="_f">_f</h1>
 <p>Converts to a float.</p>
 <p><strong>Examples:</strong></p>
@@ -293,9 +298,9 @@ _S(%A);         // A's value is temporarily converted to an int, but A's actual 
 _f($A);         // A's value is temporarily converted to a float, but A's actual value remains the same as an int.
 </code></pre>
 
-<p>Danmakufu Equivalent: <strong>truncate</strong>();</p>
+<p>Danmakufu Equivalent: <code>truncate();</code></p>
 <h1 id="-99xx">[-99xx]</h1>
-<p>A build-in register that returns an int. An in-depth list is currently under construction.</p>
+<p>A build-in register that returns an int. An in-depth list can be found <a href="../registers">here</a>.</p>
 <p><strong>Examples:</strong></p>
 <pre><code class="ecl">[-9903];
 [9903];         // Invalid.
@@ -303,7 +308,7 @@ _f($A);         // A's value is temporarily converted to a float, but A's actual
 </code></pre>
 
 <h1 id="-99xx0f">[-99xx.0f]</h1>
-<p>A build-in register that returns a float. An in-depth list is currently under construction.</p>
+<p>A build-in register that returns a float. An in-depth list is currently <a href="../registers">here</a>.</p>
 <p><strong>Examples:</strong></p>
 <pre><code class="ecl">[-9998.0f];
 [9938.0f];      // Invalid.
@@ -314,6 +319,8 @@ _f($A);         // A's value is temporarily converted to a float, but A's actual
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../registers/" class="btn btn-neutral float-right" title="Registers">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -344,6 +351,8 @@ _f($A);         // A's value is temporarily converted to a float, but A's actual
       
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../registers/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
